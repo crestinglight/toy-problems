@@ -7,24 +7,21 @@ var arrayFruits = [
 	{classification: "vegetable", food:"broccoli"}
 ];
 
-var yesEat = [];
-var noEat = [];
-arrayFruits.forEach(function(fewd){
+
+function each(arrayFoods, fewd){
 	
-	if(fewd.classification === "fruit"){
-		console.log("I can't eat " + fewd.food + ".");
-		noEat.push(fewd.food);
+	for(var i=0; i < arrayFoods.length; i++){
+
+		if(arrayFoods[i].classification === "fruit"){
+			console.log("I can't eat " + arrayFoods[i].food + ".");
+		}
+		else {
+			console.log("I can eat " + arrayFoods[i].food + "!");
+		}
 	}
-	else {
-		console.log("I can eat " + fewd.food + "!");
-		yesEat.push(fewd.food);
-	}
-	return {
-		yesEat: yesEat,
-		noEat: noEat
-	};
+	
+}
+
+each(arrayFruits, function(n){
+	console.log(n);
 });
-
-
-console.log("Foods I can eat: " + yesEat);
-console.log("Foods I can't eat: " + noEat);
